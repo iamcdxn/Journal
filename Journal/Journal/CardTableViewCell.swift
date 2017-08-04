@@ -12,6 +12,7 @@ class CardTableViewCell: UITableViewCell {
 
     @IBOutlet var cardImage: UIImageView!
     @IBOutlet var cardTitle: UILabel!
+    @IBOutlet var roundView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

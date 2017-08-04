@@ -17,6 +17,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var myJournalTableView: UITableView!
     var dataAmount: Int = 0
     var myJournals: [Journal] = []
+    var imgSubView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +64,26 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             titleCell.addButton.addTarget(self, action: #selector(self.presentNextPage(sender:)), for: .touchUpInside)
 
+            titleCell.backgroundColor = UIColor.clear
             return titleCell
 
         } else {
             guard let cardCell: CardTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cardDisplay") as? CardTableViewCell else {
+
                 return UITableViewCell()
             }
+            cardCell.roundView.layer.cornerRadius = cardCell.roundView.bounds.width/2
+            cardCell.roundView.layer.masksToBounds = true
 
+            cardCell.cardImage.layer.cornerRadius = 8.0
+            cardCell.cardImage.layer.masksToBounds = false
+
+            cardCell.cardImage.layer.shadowColor = UIColor.black.cgColor
+            cardCell.cardImage.layer.shadowRadius = 10.0
+            cardCell.cardImage.layer.shadowOpacity = 1.0
+            cardCell.cardImage.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+
+            cardCell.backgroundColor = UIColor.clear
             cardCell.cardTitle.text = myJournals[indexPath.row].title
             if let myJournalImage = myJournals[indexPath.row].image {
                 cardCell.cardImage.image = UIImage(data: myJournalImage as Data)
@@ -136,17 +150,4 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.myJournalTableView.reloadData()
     }
 
-//    func deleteCoreData() {
-//        let request: NSFetchRequest<Journal> = Journal.fetchRequest()
-//        request.predicate = nil
-//        
-//        let deleteDate = NSDate()
-//        
-//        request.predicate = NSPredicate(format: "data = \(deleteDate)")
-//        
-//        do {
-//            let relults = try DatabaseController.getContext().execute(request) as! [Journal]
-//        }
-//    }
-//    
 }

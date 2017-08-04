@@ -120,6 +120,7 @@
                                         <connections>
                                             <outlet property="cardImage" destination="AgY-1u-kYz" id="PTH-Zk-Ff9"/>
                                             <outlet property="cardTitle" destination="RW1-LT-b3o" id="OZf-vH-P8M"/>
+                                            <outlet property="roundView" destination="4gM-my-1wT" id="Hh0-pR-fZJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -159,7 +160,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_greenPlain" translatesAutoresizingMaskIntoConstraints="NO" id="Kp4-ui-S4Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                <color key="tintColor" red="0.98823529480000005" green="0.62923490999999998" blue="0.044088449330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kp4-ui-S4Q" secondAttribute="height" multiplier="1:1" id="b4P-DG-cmB"/>
                                 </constraints>
@@ -180,11 +181,10 @@
                                     <constraint firstAttribute="height" constant="0.5" id="zxG-3M-cgY"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dvp-yB-qz3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvp-yB-qz3">
                                 <rect key="frame" x="22" y="441" width="331" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="QuM-so-B2a" id="KjZ-BM-Vfm"/>

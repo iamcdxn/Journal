@@ -19,6 +19,8 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet var dismissBtn: UIButton!
     @IBOutlet var saveBtn: UIButton!
 
+    let color = Colors()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +35,9 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
 
         } else {
             pickImage.image = UIImage(named: "icon_photo")
+            let backgroundLayer = color.gl
+            pickImage.backgroundColor = UIColor.black
+            pickImage.layer.insertSublayer(backgroundLayer!, at: 0)
             pickImage.contentMode = .center
         }
 
