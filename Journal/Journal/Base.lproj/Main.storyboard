@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-AS-s1f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-AS-s1f">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C2v-vC-6YX" id="lLg-rI-hSM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Journals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-6s-jbb">
@@ -69,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="84" width="375" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3SE-Im-san" id="lLm-vE-E4l">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="225.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgY-1u-kYz">
@@ -79,20 +79,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-LT-b3o">
-                                                    <rect key="frame" x="20" y="166" width="335" height="20"/>
+                                                    <rect key="frame" x="20" y="166" width="335" height="29.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3Z-IN-VRU">
-                                                    <rect key="frame" x="20" y="206" width="335" height="0.5"/>
+                                                    <rect key="frame" x="20" y="215.5" width="335" height="0.5"/>
                                                     <color key="backgroundColor" red="0.0039215688589999999" green="0.031372550870000002" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="Aww-vF-7An"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gM-my-1wT">
-                                                    <rect key="frame" x="183" y="202" width="8" height="8"/>
+                                                    <rect key="frame" x="183" y="211.5" width="8" height="8"/>
                                                     <color key="backgroundColor" red="0.64705882349999999" green="0.66666666669999997" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="gTX-eL-9pT"/>
@@ -105,6 +105,7 @@
                                                 <constraint firstItem="AgY-1u-kYz" firstAttribute="leading" secondItem="lLm-vE-E4l" secondAttribute="leading" constant="20" id="4iQ-23-xRg"/>
                                                 <constraint firstAttribute="trailing" secondItem="AgY-1u-kYz" secondAttribute="trailing" constant="20" id="JhH-Do-Owl"/>
                                                 <constraint firstItem="RW1-LT-b3o" firstAttribute="top" secondItem="AgY-1u-kYz" secondAttribute="bottom" constant="16" id="Ocs-qJ-eYu"/>
+                                                <constraint firstAttribute="bottom" secondItem="4gM-my-1wT" secondAttribute="bottom" constant="6" id="Qfw-Ei-RQe"/>
                                                 <constraint firstItem="AgY-1u-kYz" firstAttribute="top" secondItem="lLm-vE-E4l" secondAttribute="top" constant="10" id="R5B-El-l3d"/>
                                                 <constraint firstItem="U3Z-IN-VRU" firstAttribute="leading" secondItem="lLm-vE-E4l" secondAttribute="leading" constant="20" id="VP4-wl-dZU"/>
                                                 <constraint firstItem="4gM-my-1wT" firstAttribute="top" secondItem="RW1-LT-b3o" secondAttribute="bottom" constant="16" id="Yyk-hU-YcV"/>
@@ -161,24 +162,24 @@
                                     <constraint firstAttribute="width" secondItem="Kp4-ui-S4Q" secondAttribute="height" multiplier="1:1" id="b4P-DG-cmB"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cras justo oditiona" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Gd-hQy">
-                                <rect key="frame" x="22" y="385" width="331" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cras justo oditiona" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Gd-hQy">
+                                <rect key="frame" x="22" y="385" width="331" height="36"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phB-X6-km0">
-                                <rect key="frame" x="22" y="425" width="331" height="0.5"/>
+                                <rect key="frame" x="22" y="431" width="331" height="0.5"/>
                                 <color key="backgroundColor" red="0.01176470611" green="0.043137256059999997" blue="0.2274509817" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="zxG-3M-cgY"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dvp-yB-qz3">
-                                <rect key="frame" x="22" y="435" width="331" height="168"/>
+                                <rect key="frame" x="22" y="441" width="331" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-bk-crf">

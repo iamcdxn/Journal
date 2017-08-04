@@ -44,7 +44,6 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return UITableViewCell()
             }
 
-            titleCell.backgroundColor = UIColor.blue
             return titleCell
         } else {
             guard let cardCell: CardTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cardDisplay") as? CardTableViewCell else {
