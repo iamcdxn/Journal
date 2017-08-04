@@ -9,11 +9,14 @@
 import UIKit
 import CoreData
 
+var selectedJournal = Journal()
+var isEditingJournal = false
+
 class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var myJournalTableView: UITableView!
-    var dataAmount:Int = 0
-    var myJournals:[Journal] = []
+    var dataAmount: Int = 0
+    var myJournals: [Journal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +30,18 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        isEditingJournal = false
         getData()
         self.myJournalTableView.reloadData()
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedJournal = myJournals[indexPath.row]
+        isEditingJournal = true
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createJournal")
+        self.present(nextViewController, animated: true, completion: nil)
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -113,9 +121,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             myJournals = searchResults
 
-        }
-
-        catch {
+        } catch {
             print("Error: \(error)")
         }
     }
@@ -129,4 +135,18 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         self.myJournalTableView.reloadData()
     }
+
+//    func deleteCoreData() {
+//        let request: NSFetchRequest<Journal> = Journal.fetchRequest()
+//        request.predicate = nil
+//        
+//        let deleteDate = NSDate()
+//        
+//        request.predicate = NSPredicate(format: "data = \(deleteDate)")
+//        
+//        do {
+//            let relults = try DatabaseController.getContext().execute(request) as! [Journal]
+//        }
+//    }
+//    
 }

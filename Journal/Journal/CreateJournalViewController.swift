@@ -22,6 +22,20 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if isEditingJournal {
+            titleTextField.text = selectedJournal.title
+            contentTextField.text = selectedJournal.content
+            pickImage.image = UIImage(data: selectedJournal.image! as Data)
+            pickImage.contentMode = .scaleAspectFill
+            pickImage.clipsToBounds = true
+
+//            isEditingJournal = false
+
+        } else {
+            pickImage.image = UIImage(named: "icon_photo")
+            pickImage.contentMode = .center
+        }
+
         // 單指輕點
         let singleFinger = UITapGestureRecognizer(
             target:self,
@@ -36,11 +50,12 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         // 為視圖加入監聽手勢
         self.pickImage.addGestureRecognizer(singleFinger)
         self.pickImage.isUserInteractionEnabled = true
+
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        
+
         return true
     }
 
@@ -85,25 +100,55 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
 
     @IBAction func save(_ sender: Any) {
 
+        if isEditingJournal {
+            updateJournal()
+        } else {
+            saveJournal()
+        }
+        self.dismiss()
+    }
+
+    func saveJournal() {
+    
         // automatic catch Journal Name
         let journalClassName = String(describing: Journal.self)
-
+        
         guard let journal: Journal = NSEntityDescription.insertNewObject(forEntityName: journalClassName, into: DatabaseController.getContext()) as? Journal else {
             return
         }
-
+        
         journal.title = titleTextField.text
         journal.content = contentTextField.text
         journal.image = UIImagePNGRepresentation(self.pickImage.image!) as NSData?
         journal.data = NSDate()
-
+        
         DatabaseController.saveContext()
-        self.dismiss()
-    }
 
+    }
     func updateJournal() {
-        
-        
-    }
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Journal")
 
+        request.predicate = nil
+
+        let deleteDate = selectedJournal.title
+
+        request.predicate = NSPredicate(format: "title = '\(deleteDate ?? "nothing here")'")
+
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(request)
+
+            if searchResults.count > 0 {
+                if let objectUpdate = searchResults[0] as? NSManagedObject {
+                objectUpdate.setValue(titleTextField.text, forKey: "title")
+                objectUpdate.setValue(contentTextField.text, forKey: "content")
+                objectUpdate.setValue(UIImagePNGRepresentation(self.pickImage.image!) as NSData?, forKey: "image")
+//                searchResults[0].data = NSData()
+                }
+                try DatabaseController.saveContext()
+            }
+
+        } catch {
+            fatalError("\(error)")
+        }
+    }
 }
