@@ -133,7 +133,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
 
         let selectedDate = selectedJournal.dateString
 
-        request.predicate = NSPredicate(format: "dataString = '\(selectedDate ?? "QQ")'")
+        request.predicate = NSPredicate(format: "dateString = '\(selectedDate ?? "QQ")'")
 
         do {
             let searchResults = try DatabaseController.getContext().fetch(request)
