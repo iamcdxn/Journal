@@ -109,19 +109,20 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     }
 
     func saveJournal() {
-    
+
         // automatic catch Journal Name
         let journalClassName = String(describing: Journal.self)
-        
+
         guard let journal: Journal = NSEntityDescription.insertNewObject(forEntityName: journalClassName, into: DatabaseController.getContext()) as? Journal else {
             return
         }
-        
+
         journal.title = titleTextField.text
         journal.content = contentTextField.text
         journal.image = UIImagePNGRepresentation(self.pickImage.image!) as NSData?
         journal.data = NSDate()
-        
+        journal.dateString = String(describing: NSDate())
+
         DatabaseController.saveContext()
 
     }
@@ -130,9 +131,9 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
 
         request.predicate = nil
 
-        let deleteDate = selectedJournal.title
+        let selectedDate = selectedJournal.dateString
 
-        request.predicate = NSPredicate(format: "title = '\(deleteDate ?? "nothing here")'")
+        request.predicate = NSPredicate(format: "dataString = '\(selectedDate ?? "QQ")'")
 
         do {
             let searchResults = try DatabaseController.getContext().fetch(request)

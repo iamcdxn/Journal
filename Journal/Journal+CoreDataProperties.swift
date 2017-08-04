@@ -19,5 +19,5 @@ extension Journal {
     @NSManaged public var content: String?
     @NSManaged public var image: NSData?
     @NSManaged public var data: NSDate?
-
+    @NSManaged public var dataString: String?
 }
