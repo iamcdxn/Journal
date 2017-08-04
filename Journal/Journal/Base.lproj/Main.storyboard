@@ -157,14 +157,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_photo" translatesAutoresizingMaskIntoConstraints="NO" id="Kp4-ui-S4Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_greenPlain" translatesAutoresizingMaskIntoConstraints="NO" id="Kp4-ui-S4Q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <color key="tintColor" red="0.98823529480000005" green="0.62923490999999998" blue="0.044088449330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kp4-ui-S4Q" secondAttribute="height" multiplier="1:1" id="b4P-DG-cmB"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cras justo oditiona" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Gd-hQy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Journal Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Gd-hQy">
                                 <rect key="frame" x="22" y="385" width="331" height="36"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -251,7 +251,7 @@
     </scenes>
     <resources>
         <image name="button_close" width="44" height="44"/>
-        <image name="icon_photo" width="44" height="44"/>
         <image name="icon_plus" width="44" height="44"/>
+        <image name="image_greenPlain" width="2880" height="1800"/>
     </resources>
 </document>

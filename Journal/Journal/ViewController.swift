@@ -66,6 +66,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let myJournalImage = myJournals[indexPath.row].image {
                 cardCell.cardImage.image = UIImage(data: myJournalImage as Data)
                 cardCell.cardImage.contentMode = .scaleAspectFill
+                cardCell.cardImage.clipsToBounds = true
             } else {
                 cardCell.cardImage.image = UIImage(named: "icon_photo")
                 cardCell.cardImage.contentMode = .center
@@ -102,7 +103,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
             myJournals = searchResults
 
         }
-            
+
         catch {
             print("Error: \(error)")
         }

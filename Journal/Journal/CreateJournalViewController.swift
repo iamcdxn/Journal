@@ -34,8 +34,8 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         singleFinger.numberOfTouchesRequired = 1
 
         // 為視圖加入監聽手勢
-        self.view.addGestureRecognizer(singleFinger)
-
+        self.pickImage.addGestureRecognizer(singleFinger)
+        self.pickImage.isUserInteractionEnabled = true
     }
 
     func singleTap(_ recognizer:UITapGestureRecognizer){
@@ -59,6 +59,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
             print("Something weat wrong")
         }
         pickImage.contentMode = .scaleAspectFill
+        pickImage.clipsToBounds = true
 
         dismiss()
     }
