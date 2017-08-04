@@ -31,15 +31,26 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
             pickImage.contentMode = .scaleAspectFill
             pickImage.clipsToBounds = true
 
+            saveBtn.setTitle("Update", for: .normal)
 //            isEditingJournal = false
 
         } else {
             pickImage.image = UIImage(named: "icon_photo")
             let backgroundLayer = color.gl
             pickImage.backgroundColor = UIColor.black
+//            backgroundLayer?.frame = pickImage.frame
             pickImage.layer.insertSublayer(backgroundLayer!, at: 0)
             pickImage.contentMode = .center
+            saveBtn.setTitle("Save", for: .normal)
+
         }
+
+        saveBtn.layer.cornerRadius = 22
+
+        saveBtn.layer.shadowColor = UIColor(red: 247.0/255.0, green: 174.0/255.0, blue: 163.0/255.0, alpha: 1.0).cgColor
+        saveBtn.layer.shadowRadius = 10.0
+        saveBtn.layer.shadowOpacity = 1.0
+        saveBtn.layer.shadowOffset = CGSize(width: 0, height: 2.0)
 
         // 單指輕點
         let singleFinger = UITapGestureRecognizer(
