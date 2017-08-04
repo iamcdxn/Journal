@@ -19,6 +19,7 @@
 		647107AC1F340ED00008B0C2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107AB1F340ED00008B0C2 /* TableViewCell.swift */; };
 		647107AE1F340F140008B0C2 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107AD1F340F140008B0C2 /* CardTableViewCell.swift */; };
 		647107B01F341D000008B0C2 /* CreateJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107AF1F341D000008B0C2 /* CreateJournalViewController.swift */; };
+		647107B21F343BB10008B0C2 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107B11F343BB10008B0C2 /* DatabaseController.swift */; };
 		859841B1A3EBC3216B91BC6B /* Pods_JournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0EED7EF42B5A2E9AD69A6D /* Pods_JournalTests.framework */; };
 		C58D7ACCEFEFE59E18CC47BF /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE6437E104333C48D93F623 /* Pods_Journal.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		647107AB1F340ED00008B0C2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		647107AD1F340F140008B0C2 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		647107AF1F341D000008B0C2 /* CreateJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJournalViewController.swift; sourceTree = "<group>"; };
+		647107B11F343BB10008B0C2 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		6C0EED7EF42B5A2E9AD69A6D /* Pods_JournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B3CDF90307576A8009332B /* Pods-JournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		76A3891BAB83A4A80FA8CCCE /* Pods_JournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				647107771F34044E0008B0C2 /* AppDelegate.swift */,
+				647107B11F343BB10008B0C2 /* DatabaseController.swift */,
 				647107AA1F340EA50008B0C2 /* View */,
 				647107A91F340E970008B0C2 /* Controller */,
 				647107A81F340E8C0008B0C2 /* Model */,
@@ -488,6 +491,7 @@
 				6471077A1F34044E0008B0C2 /* ViewController.swift in Sources */,
 				647107B01F341D000008B0C2 /* CreateJournalViewController.swift in Sources */,
 				647107781F34044E0008B0C2 /* AppDelegate.swift in Sources */,
+				647107B21F343BB10008B0C2 /* DatabaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

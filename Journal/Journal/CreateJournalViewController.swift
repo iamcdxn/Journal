@@ -29,7 +29,8 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         // 為視圖加入監聽手勢
         self.view.addGestureRecognizer(singleFinger)
 
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     func singleTap(_ recognizer:UITapGestureRecognizer){
