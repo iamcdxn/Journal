@@ -25,7 +25,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         myJournalTableView.rowHeight = UITableViewAutomaticDimension
 
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         getData()
         self.myJournalTableView.reloadData()
@@ -76,6 +76,17 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.deleteData(at: indexPath.row)
+
+        } else {
+
+        }
+    }
+
     func presentNextPage(sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createJournal")
@@ -88,7 +99,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getData() {
 
         let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
-        
+
         do {
 
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
@@ -107,5 +118,15 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         catch {
             print("Error: \(error)")
         }
+    }
+
+    func deleteData(at tag: Int) {
+
+        print(tag)
+        DatabaseController.getContext().delete(myJournals[tag])
+
+        getData()
+
+        self.myJournalTableView.reloadData()
     }
 }

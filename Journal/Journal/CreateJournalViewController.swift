@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateJournalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateJournalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var contentTextField: UITextView!
@@ -38,7 +38,18 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         self.pickImage.isUserInteractionEnabled = true
     }
 
-    func singleTap(_ recognizer:UITapGestureRecognizer){
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        return true
+    }
+
+    // 按空白處會隱藏編輯狀態
+    func tapBlurButton(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+
+    func singleTap(_ recognizer:UITapGestureRecognizer) {
         print("單指點一下時觸發")
         loadImage()
     }
@@ -71,9 +82,13 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
+
     @IBAction func save(_ sender: Any) {
 
-        guard let journal: Journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: DatabaseController.getContext()) as? Journal else {
+        // automatic catch Journal Name
+        let journalClassName = String(describing: Journal.self)
+
+        guard let journal: Journal = NSEntityDescription.insertNewObject(forEntityName: journalClassName, into: DatabaseController.getContext()) as? Journal else {
             return
         }
 
@@ -83,7 +98,12 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         journal.data = NSDate()
 
         DatabaseController.saveContext()
+        self.dismiss()
+    }
 
+    func updateJournal() {
+        
+        
     }
 
 }
