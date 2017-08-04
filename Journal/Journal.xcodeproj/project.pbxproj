@@ -278,6 +278,7 @@
 				TargetAttributes = {
 					647107731F34044E0008B0C2 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4F2GX7DGQ7;
 						ProvisioningStyle = Automatic;
 					};
 					6471078A1F34044E0008B0C2 = {
@@ -639,6 +640,7 @@
 			baseConfigurationReference = E8B82AF740DFBA27B1834DF8 /* Pods-Journal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4F2GX7DGQ7;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CdxN.Journal;
@@ -652,6 +654,7 @@
 			baseConfigurationReference = 0DA03AF98A681E34592E040F /* Pods-Journal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4F2GX7DGQ7;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CdxN.Journal;

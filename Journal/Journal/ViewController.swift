@@ -14,7 +14,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         myJournalTableView.dataSource = self
         myJournalTableView.delegate = self
 
