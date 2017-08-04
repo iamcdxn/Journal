@@ -16,6 +16,8 @@
 		647107851F34044E0008B0C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647107831F34044E0008B0C2 /* LaunchScreen.storyboard */; };
 		647107901F34044E0008B0C2 /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471078F1F34044E0008B0C2 /* JournalTests.swift */; };
 		6471079B1F34044E0008B0C2 /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471079A1F34044E0008B0C2 /* JournalUITests.swift */; };
+		647107AC1F340ED00008B0C2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107AB1F340ED00008B0C2 /* TableViewCell.swift */; };
+		647107AE1F340F140008B0C2 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647107AD1F340F140008B0C2 /* CardTableViewCell.swift */; };
 		859841B1A3EBC3216B91BC6B /* Pods_JournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0EED7EF42B5A2E9AD69A6D /* Pods_JournalTests.framework */; };
 		C58D7ACCEFEFE59E18CC47BF /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE6437E104333C48D93F623 /* Pods_Journal.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		647107961F34044E0008B0C2 /* JournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6471079A1F34044E0008B0C2 /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		6471079C1F34044E0008B0C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		647107AB1F340ED00008B0C2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		647107AD1F340F140008B0C2 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6C0EED7EF42B5A2E9AD69A6D /* Pods_JournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B3CDF90307576A8009332B /* Pods-JournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JournalTests/Pods-JournalTests.release.xcconfig"; sourceTree = "<group>"; };
 		76A3891BAB83A4A80FA8CCCE /* Pods_JournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				647107771F34044E0008B0C2 /* AppDelegate.swift */,
-				647107791F34044E0008B0C2 /* ViewController.swift */,
+				647107AA1F340EA50008B0C2 /* View */,
+				647107A91F340E970008B0C2 /* Controller */,
+				647107A81F340E8C0008B0C2 /* Model */,
 				6471077B1F34044E0008B0C2 /* Main.storyboard */,
 				647107811F34044E0008B0C2 /* Assets.xcassets */,
 				647107831F34044E0008B0C2 /* LaunchScreen.storyboard */,
@@ -143,6 +149,30 @@
 				6471079C1F34044E0008B0C2 /* Info.plist */,
 			);
 			path = JournalUITests;
+			sourceTree = "<group>";
+		};
+		647107A81F340E8C0008B0C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				647107AB1F340ED00008B0C2 /* TableViewCell.swift */,
+				647107AD1F340F140008B0C2 /* CardTableViewCell.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		647107A91F340E970008B0C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		647107AA1F340EA50008B0C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				647107791F34044E0008B0C2 /* ViewController.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		CA47BEA8DF606B08CAC91101 /* Pods */ = {
@@ -448,7 +478,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647107AE1F340F140008B0C2 /* CardTableViewCell.swift in Sources */,
 				647107801F34044E0008B0C2 /* Journal.xcdatamodeld in Sources */,
+				647107AC1F340ED00008B0C2 /* TableViewCell.swift in Sources */,
 				6471077A1F34044E0008B0C2 /* ViewController.swift in Sources */,
 				647107781F34044E0008B0C2 /* AppDelegate.swift in Sources */,
 			);
