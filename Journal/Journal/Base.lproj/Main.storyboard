@@ -39,14 +39,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQz-Tc-wIC">
-                                                    <rect key="frame" x="323" y="2" width="44" height="44.5"/>
-                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.64313727620000005" blue="0.1019607857" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQz-Tc-wIC">
+                                                    <rect key="frame" x="323" y="2" width="44" height="44"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="RfQ-eA-S6j"/>
                                                         <constraint firstAttribute="width" constant="44" id="ciR-7c-Vxg"/>
                                                     </constraints>
-                                                    <state key="normal" title="B"/>
+                                                    <color key="tintColor" red="0.89233571290000002" green="0.2437567115" blue="0.2337254882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="B" image="icon_plus"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -192,14 +193,13 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="save"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxL-5z-rsM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxL-5z-rsM">
                                 <rect key="frame" x="20" y="29" width="36" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Eqp-01-nxD"/>
                                     <constraint firstAttribute="width" constant="36" id="F4p-ij-ceh"/>
                                 </constraints>
-                                <state key="normal" title="X"/>
+                                <state key="normal" image="button_close"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,4 +229,8 @@
             <point key="canvasLocation" x="877.60000000000002" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_close" width="44" height="44"/>
+        <image name="icon_plus" width="44" height="44"/>
+    </resources>
 </document>
