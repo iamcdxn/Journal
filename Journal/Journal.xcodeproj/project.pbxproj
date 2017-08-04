@@ -125,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				647107771F34044E0008B0C2 /* AppDelegate.swift */,
-				647107B11F343BB10008B0C2 /* DatabaseController.swift */,
 				647107AA1F340EA50008B0C2 /* View */,
 				647107A91F340E970008B0C2 /* Controller */,
 				647107A81F340E8C0008B0C2 /* Model */,
@@ -168,6 +167,9 @@
 		647107A91F340E970008B0C2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				647107791F34044E0008B0C2 /* ViewController.swift */,
+				647107AF1F341D000008B0C2 /* CreateJournalViewController.swift */,
+				647107B11F343BB10008B0C2 /* DatabaseController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -175,8 +177,6 @@
 		647107AA1F340EA50008B0C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				647107791F34044E0008B0C2 /* ViewController.swift */,
-				647107AF1F341D000008B0C2 /* CreateJournalViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

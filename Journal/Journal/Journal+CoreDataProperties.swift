@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 extension Journal {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Journal> {

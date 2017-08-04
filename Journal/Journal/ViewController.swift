@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var myJournalTableView: UITableView!
+    var dataAmount:Int = 0
+    var myJournals:[Journal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,11 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         myJournalTableView.estimatedRowHeight = 250
         myJournalTableView.rowHeight = UITableViewAutomaticDimension
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        self.myJournalTableView.reloadData()
     }
 
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,9 +43,10 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         if section == 0 {
             return 1
         } else {
-            return 6
+            return dataAmount
         }
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let titleCell: AddTableViewCell = tableView.dequeueReusableCell(withIdentifier: "titleAndAdd") as? AddTableViewCell else {
@@ -47,9 +56,19 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
             titleCell.addButton.addTarget(self, action: #selector(self.presentNextPage(sender:)), for: .touchUpInside)
 
             return titleCell
+
         } else {
             guard let cardCell: CardTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cardDisplay") as? CardTableViewCell else {
                 return UITableViewCell()
+            }
+
+            cardCell.cardTitle.text = myJournals[indexPath.row].title
+            if let myJournalImage = myJournals[indexPath.row].image {
+                cardCell.cardImage.image = UIImage(data: myJournalImage as Data)
+                cardCell.cardImage.contentMode = .scaleAspectFill
+            } else {
+                cardCell.cardImage.image = UIImage(named: "icon_photo")
+                cardCell.cardImage.contentMode = .center
             }
 
             return cardCell
@@ -63,5 +82,29 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         print("Present Next Page YA!")
 
+    }
+
+    func getData() {
+
+        let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        
+        do {
+
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+
+            print("numberof results: \(searchResults.count)")
+            dataAmount = searchResults.count
+
+            for result in searchResults as [Journal] {
+                print("create time: \(String(describing: result.data)) /// \(result.title ?? "QQ") : \(result.content ?? "Nooooooo")")
+            }
+
+            myJournals = searchResults
+
+        }
+            
+        catch {
+            print("Error: \(error)")
+        }
     }
 }

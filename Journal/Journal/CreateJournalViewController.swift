@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateJournalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var contentTextField: UITextView!
+
     @IBOutlet var pickImage: UIImageView!
+
     @IBOutlet var dismissBtn: UIButton!
+    @IBOutlet var saveBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +36,11 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
         // 為視圖加入監聽手勢
         self.view.addGestureRecognizer(singleFinger)
 
-        
-        
     }
 
     func singleTap(_ recognizer:UITapGestureRecognizer){
         print("單指點一下時觸發")
         loadImage()
-
     }
 
     func loadImage() {
@@ -55,6 +59,7 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
             print("Something weat wrong")
         }
         pickImage.contentMode = .scaleAspectFill
+
         dismiss()
     }
 
@@ -64,6 +69,20 @@ class CreateJournalViewController: UIViewController, UIImagePickerControllerDele
 
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func save(_ sender: Any) {
+
+        guard let journal: Journal = NSEntityDescription.insertNewObject(forEntityName: "Journal", into: DatabaseController.getContext()) as? Journal else {
+            return
+        }
+
+        journal.title = titleTextField.text
+        journal.content = contentTextField.text
+        journal.image = UIImagePNGRepresentation(self.pickImage.image!) as NSData?
+        journal.data = NSDate()
+
+        DatabaseController.saveContext()
+
     }
 
 }
