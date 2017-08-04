@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Journal View Controller-->
         <scene sceneID="g2x-hw-0lV">
             <objects>
-                <viewController storyboardIdentifier="createJournal" id="QuM-so-B2a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createJournal" id="QuM-so-B2a" customClass="CreateJournalViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wen-2h-Thc"/>
                         <viewControllerLayoutGuide type="bottom" id="U4L-Zt-oBb"/>

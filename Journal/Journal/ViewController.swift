@@ -44,6 +44,8 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return UITableViewCell()
             }
 
+            titleCell.addButton.addTarget(self, action: #selector(self.presentNextPage(sender:)), for: .touchUpInside)
+
             return titleCell
         } else {
             guard let cardCell: CardTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cardDisplay") as? CardTableViewCell else {
@@ -54,4 +56,12 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
+    func presentNextPage(sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createJournal")
+        self.present(nextViewController, animated: true, completion: nil)
+
+        print("Present Next Page YA!")
+
+    }
 }
